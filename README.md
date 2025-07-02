@@ -1,82 +1,110 @@
 # MediBook AI
 A voice-enabled multilingual AI agent for booking doctor appointments using open-source Small Language Models (SLMs). Built with privacy-first principles and designed to run on personal computers with minimal resource requirements.
 
+## System Architecture
+
 MediBookAI/
 │
 ├── app/
 │   ├── __init__.py
-│   ├── main.py
+│   ├── cli.py
 │   ├── config.py
-│   └── cli.py               # Command-line interface
+│   ├── main.py
+│   ├── static/
+│   │   ├── script.js
+│   │   └── style.css
+│   └── templates/
+│       └── index.html
 │
 ├── core/
 │   ├── __init__.py
 │   ├── agent.py
-│   ├── nlu.py
 │   ├── appointment.py
-│   ├── conversation.py      # Conversation state management
-│   └── validators.py        # Input validation logic
-│
-├── voice/
-│   ├── __init__.py
-│   ├── stt.py
-│   ├── tts.py
-│   ├── recorder.py
-│   └── audio_utils.py       # Audio processing utilities
-│
-├── integrations/            # NEW: External service integrations
-│   ├── __init__.py
-│   ├── healthcare_apis.py   # Doctor booking APIs
-│   ├── calendar.py          # Calendar integrations
-│   └── notifications.py     # SMS/Email notifications
-│
-├── multilingual/            # NEW: Language support
-│   ├── __init__.py
-│   ├── translator.py        # Translation logic
-│   ├── prompts/             # Language-specific prompts
-│   │   ├── en.json
-│   │   ├── fr.json
-│   │   ├── es.json
-│   │   └── ar.json
-│   └── language_detector.py
+│   ├── conversation.py
+│   ├── nlu.py
+│   └── validators.py
 │
 ├── data/
 │   ├── bookings.json
-│   ├── users.json           # User profiles
-│   └── conversations.json   # Conversation history
+│   ├── conversations.json
+│   └── users.json
+│
+├── docs/
+│   ├── api.md
+│   ├── deployment.md
+│   └── setup.md
+│
+├── integrations/
+│   ├── __init__.py
+│   ├── calendar.py
+│   ├── healthcare_apis.py
+│   └── notifications.py
 │
 ├── models/
-│   ├── README.md
-│   └── model_manager.py     # Model loading and management
+│   ├── model_manager.py
+│   └── README.md
 │
-├── tests/                   # NEW: Test suite
+├── multilingual/
 │   ├── __init__.py
-│   ├── test_core/
-│   ├── test_voice/
-│   └── test_integrations/
-│
-├── docs/                    # NEW: Documentation
-│   ├── setup.md
-│   ├── api.md
-│   └── deployment.md
-│
-│
-├── utils/
-│   ├── __init__.py
-│   ├── logging.py
-│   ├── metrics.py
-│   └── exceptions.py
+│   ├── language_detector.py
+│   ├── prompts/
+│   │   ├── ar.json
+│   │   ├── en.json
+│   │   ├── es.json
+│   │   └── fr.json
+│   └── translator.py
 │
 ├── security/
 │   ├── __init__.py
 │   ├── encryption.py
 │   └── hipaa_compliance.py
 │
-├── requirements.txt
-├── requirements-dev.txt     # NEW: Development dependencies
-├── .env.example            # NEW: Environment variables template
+├── tests/
+│   ├── __init__.py
+│   ├── test_core/
+│   │   └── __init__.py
+│   ├── test_integrations/
+│   │   └── __init__.py
+│   └── test_voice/
+│       └── __init__.py
+│
+├── utils/
+│   ├── __init__.py
+│   ├── exceptions.py
+│   ├── logging.py
+│   ├── metrics.py
+│   └── __init__.py
+│
+├── voice/
+│   ├── __init__.py
+│   ├── audio_utils.py
+│   ├── recorder.py
+│   ├── stt.py
+│   └── tts.py
+│
+├── .env.example
+├── .gitignore
 ├── README.md
+├── requirements-dev.txt
+├── requirements.txt
 └── run.py
+
+## Tech Stack
+*   Python
+*   Flask
+*   HTML
+*   CSS
+*   JavaScript
+
+### System Architecture
+The system architecture consists of a Flask web application that serves a front-end implemented using HTML, CSS, and JavaScript. The front-end allows users to interact with the AI agent through a chat interface. The backend uses open-source Small Language Models (SLMs) for natural language understanding. The `app` directory contains the main application logic, including the Flask routes and the chat API endpoint. The `app/static` directory contains static files such as CSS and JavaScript. The `app/templates` directory contains HTML templates. The `core` directory likely contains the AI agent and conversation management logic. The `voice` directory handles voice input/output. The `integrations` directory connects to external services such as healthcare APIs, calendar, and notifications. The `multilingual` directory provides language support. The `data` directory stores application data. The `models` directory manages the AI models. The `tests` directory contains the test suite. The `docs` directory contains documentation. The `utils` directory provides utility functions. The `security` directory handles security aspects.
+
+### NLP Techniques
+The application uses open-source Small Language Models (SLMs) for natural language understanding. The NLP logic is likely implemented in the `core/nlu.py` file.
+
+### Libraries and Tools
+*   Flask
+*   Other libraries specified in `requirements.txt` and `requirements-dev.txt`
 
 ## Front-end Implementation
 The front-end is implemented using HTML, CSS, and JavaScript. It includes the following features:
@@ -90,3 +118,35 @@ For questions or contributions, please contact:
 
 Repository: git@github.com:biko2020/MediBookAI.git
 Email: aitoufkirbrahimab@gmail.com
+
+## Running the Application
+
+1.  **Install Flask:**
+
+    ```bash
+    pip install flask
+    ```
+
+2.  **Set the `FLASK_APP` environment variable:**
+
+    ```bash
+    export FLASK_APP=app
+    ```
+
+    (On Windows, use `set FLASK_APP=app`)
+
+3.  **Run the app:**
+
+    ```bash
+    flask run
+    ```
+
+    or
+
+    ```bash
+    python -m flask run
+    ```
+
+4.  **Access the app in your browser:**
+
+    Open your web browser and go to `http://localhost:5000/`.
