@@ -1,0 +1,8 @@
+# requirements.txt
+flask==3.0.3
+transformers==4.44.2
+torch==2.4.1
+speechrecognition==3.10.4
+pyttsx3==2.90
+python-dotenv==1.0.1
+cryptography==43.0.1

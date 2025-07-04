@@ -1,1 +1,42 @@
+__pycache__/
+*.pyc
+.env
+data/*.json
+models/*
+*.log
+
+
+# Virtual environment
+ai_env/
+venv/
+env/
+.env/
+.venv/
+
+# Distribution / packaging
+
+
+# Environments
+.env
 .venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and databases
+
+
+# Testing and coverage
+
+
+# OS generated files
+

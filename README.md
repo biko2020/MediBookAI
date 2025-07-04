@@ -119,34 +119,28 @@ For questions or contributions, please contact:
 Repository: git@github.com:biko2020/MediBookAI.git
 Email: aitoufkirbrahimab@gmail.com
 
+
+## Installation
+
+1. **Clone the repository**
+    ```bash
+    git clone git@github.com:biko2020/MediBookAI.git
+    cd MediBookAI
+
+2. **Create a virtual environment**
+    ```bash
+    python3 -m venv ai_env
+    source ai_env/bin/activate
+
+3.**Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+
 ## Running the Application
+1. **Development Server**
+```bash
+  python app/main.py
 
-1.  **Install Flask:**
-
-    ```bash
-    pip install flask
-    ```
-
-2.  **Set the `FLASK_APP` environment variable:**
-
-    ```bash
-    export FLASK_APP=app
-    ```
-
-    (On Windows, use `set FLASK_APP=app`)
-
-3.  **Run the app:**
-
-    ```bash
-    flask run
-    ```
-
-    or
-
-    ```bash
-    python -m flask run
-    ```
-
-4.  **Access the app in your browser:**
+2.  **Access the app in your browser:**
 
     Open your web browser and go to `http://localhost:5000/`.
